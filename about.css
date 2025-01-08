@@ -1,0 +1,120 @@
+/* Reset and Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Serif', serif;
+    color: rgb(249, 247, 247);  /* Default text color inside text-container */
+    background-color: #f4f4f4;  /* Page background color */
+    overflow-x: hidden;
+}
+
+/* Add a container to wrap all texts */
+.text-container {
+    background-color: #222;  /* Dark background for text */
+    padding: 20px;
+}
+
+/* Navigation Bar (same as homepage) */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: 'Noto Serif', serif;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: red;
+}
+
+/* About Container */
+.about-container {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+/* About Sections */
+.about-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    justify-content: space-between;
+}
+
+.about-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-text {
+    width: 45%;
+    padding: 20px;
+}
+
+.about-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: white;  /* Ensure text inside the dark container is white */
+}
+
+.about-image {
+    width: 45%;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Noto Serif', serif;
+    font-weight: normal;
+}
+
+footer p {
+    color: white;
+    font-size: 1em;
+}
