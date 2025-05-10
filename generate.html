@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Recipe</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="generate.css">
+    <!-- Link to Google Fonts for Noto Serif -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="voice.html">Voice Recipe Assistant</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="eat.html">What To Eat?</a></li>
+                <li><a href="recipe.html">Popular Recipes</a></li>
+                <li><a href="quiz.html">Are You a Foodie?</a></li>
+                <li><a href="game.html">Game</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    
+        
+        <h1>Let's Cook Something Delicious</h1>
+        <p>What's in you fridge?!? Enter the ingredients and get the recipe!</p>
+    
+   
+    <!-- Main Content -->
+    <div class="form-container">
+        <form id="recipeForm">
+            <input type="text" id="ingredients" placeholder="Enter Ingredients (Comma Separated)" required />
+            <input type="text" id="mealType" placeholder="Meal Type (e.g., Breakfast, Lunch, Dinner)" required />
+            <input type="number" id="timeRequired" placeholder="Time Required (Minutes)" required />
+
+            <button type="submit">Generate Recipe</button>
+        </form>
+  
+        <div class="recipe-results" id="recipeResults"></div>
+    </div>
+
+    <!-- Footer -->z
+    <footer>
+        <p>&copy; 2025 FLAVOR All rights reserved</p>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="generate.js"></script>
+
+</body>
+</html>

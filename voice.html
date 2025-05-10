@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Voice Chatbot</title>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-family: 'Noto Serif', serif;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: red;
+}
+
+
+    body {
+    
+      background: "1.jpg";
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #f7f4f3;
+    }
+
+    .chat-container {
+      width: 100%;
+      max-width: 600px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    #userInput {
+      width: 70%;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #fd0505;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #ec0101;
+    }
+
+    #chatBox {
+      margin-top: 20px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    #chatBox p {
+      margin: 10px 0;
+    }
+
+    .user-msg {
+      color: #1a73e8;
+    }
+
+    .bot-msg {
+      color: #000;
+    }
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background: url("chef.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px 40px; /* push content below navbar */
+}
+
+/* Footer at bottom */
+footer {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 10px 0;
+  font-family: 'Noto Serif', serif;
+  color: white;
+}
+
+    footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align : bottom ;
+    padding: 100px 0;
+    font-family: 'Noto Serif', serif;
+    font-weight: normal;
+}
+
+footer p {
+    color: white;
+    font-size: 1em;
+}
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 10px 0;
+      font-family: 'Noto Serif', serif;
+    }
+
+  </style>
+</head>
+<body>
+      <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="voice.html">Voice Recipe Assistant</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="eat.html">What To Eat?</a></li>
+                <li><a href="recipe.html">Popular Recipes</a></li>
+                <li><a href="quiz.html">Are You a Foodie?</a></li>
+                <li><a href="game.html">Game</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+<br>
+<br><br> <br>
+  <h2>Talk Directly To The Chef 🗣️</h2>
+  <div class="chat-container">
+    <input id="userInput" placeholder="Give me a recipe. . . . . . . . " />
+    <button onclick="handleInput()">Send</button>
+    <button onclick="startListening()"> Speak</button>
+</div>
+    <div id="chatBox"></div>
+
+  <script>
+
+
+    const chatBox = document.getElementById("chatBox");
+    const apiKey = "d3bcaf0f2f32485a91650b52ba1edeee"; // Use your Spoonacular API key
+
+    function speak(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'en-US';
+      speechSynthesis.speak(utterance);
+    }
+
+    async function getGlobalRecipe(query) {
+      try {
+        const res = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${query}&number=1`);
+        const data = await res.json();
+
+        if (!data.results || data.results.length === 0) {
+          return `Sorry, I couldn't find any recipes for "${query}".`;
+        }
+
+        const recipe = data.results[0];
+        const detailsRes = await fetch(`https://api.spoonacular.com/recipes/${recipe.id}/information?apiKey=${apiKey}`);
+        const details = await detailsRes.json();
+
+        const ingredients = details.extendedIngredients.map(i => i.original).join(", ");
+        const instructions = details.instructions ? details.instructions : "Instructions not available.";
+
+        return `
+          <strong>${details.title}</strong><br/>
+          <img src="${details.image}" alt="${details.title}" style="width:100%; max-width:300px; border-radius:8px; margin:10px 0;"><br/>
+          <strong>Ingredients:</strong> ${ingredients}<br/><br/>
+          <strong>Instructions:</strong> ${instructions.substring(0, 500)}...
+        `;
+      } catch (error) {
+        return "Something went wrong while fetching the recipe.";
+      }
+    }
+
+    async function handleInput(text = null) {
+      const inputField = document.getElementById("userInput");
+      const input = text || inputField.value.trim();
+      if (!input) return;
+
+      chatBox.innerHTML += `<p class="user-msg"><strong>You:</strong> ${input}</p>`;
+
+      const reply = await getGlobalRecipe(input);
+      chatBox.innerHTML += `<p class="bot-msg"><strong>Bot:</strong><br/> ${reply}</p>`;
+      speak(stripHTML(reply));
+
+      inputField.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function stripHTML(html) {
+      const div = document.createElement("div");
+      div.innerHTML = html;
+      return div.textContent || div.innerText || "";
+    }
+
+    function startListening() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        alert("Your browser doesn't support speech recognition.");
+        return;
+      }
+
+      const recognition = new SpeechRecognition();
+      recognition.lang = "en-US";
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.start();
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        handleInput(transcript);
+      };
+
+      recognition.onerror = (event) => {
+        alert("Speech recognition error: " + event.error);
+      };
+    }
+  </script>
+
+</body>
+</html>

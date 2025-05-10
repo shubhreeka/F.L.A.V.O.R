@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Serif', serif;
+    background-color: #f4f4f4;
+    background: url('1.jpg') no-repeat center center fixed;  /* Background image */
+    background-size: cover;  /* Ensure the background image covers the entire page */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styling */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 10;
+    }
+
+
+nav ul li a:hover {
+    color: red; /* Change text color to red on hover */
+}
+
+/* Container for the navigation links */
+nav .nav-container ul {
+    list-style-type: none; /* Remove default list styling (bullets) */
+    padding: 0;
+    text-align: center; /* Center align the nav links */
+}
+
+/* Individual navigation list items */
+nav .nav-container ul li {
+    display: inline; /* Display list items in a row */
+    margin: 0 15px; /* Add spacing between links */
+}
+
+/* Navigation links styling */
+nav .nav-container ul li a {
+    color: white; /* Set default text color to white */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 18px; /* Set the font size of the navigation links */
+}
+
+/* This targets the links on hover */
+nav .nav-container ul li a:hover {
+    color: red; /* Red color on hover */
+    /* You can also add background or underline on hover, if needed */
+    /* text-decoration: underline; /* Uncomment this if you want underline on hover */
+}
+
+/* Quiz Container Styling */
+.quiz-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-header h2 {
+    text-align: center;
+    color: #333;
+}
+
+.quiz-header p {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.question h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.question label {
+    display: block;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.submit-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #f50e0e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: Noto Serif;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #d21c00;
+}
+
+/* Result Display Styling */
+#quiz-result {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.result-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-img {
+    max-width: 100px;
+    margin: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 50px;
+}

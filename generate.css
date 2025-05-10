@@ -1,0 +1,186 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Font */
+body {
+    font-family: 'Noto Serif', serif;
+    background: url('o1.jpg') no-repeat center center fixed;  /* Background image */
+    background-size: cover;  /* Ensure the background image covers the entire page */
+    color: rgb(40, 25, 25);
+    margin: 0;
+    padding: 0;
+    padding-top: 60px; /* Adjust for the fixed navbar height */
+}
+
+/* Navigation Bar - Fixed on Top */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent background */
+    z-index: 10; /* Keep on top of other elements */
+}
+
+/* Navigation Links */
+nav .nav-container ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav .nav-container ul li {
+    display: inline;
+    margin: 0 10px; /* Reduced space between navigation items */
+}
+
+nav .nav-container ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    transition: color 0.3s ease; /* Transition for text color */
+}
+
+nav .nav-container ul li a:hover {
+    color: red; /* Red color on hover */
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    padding: 30px;
+    background-color: #333;
+    color: white;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+    margin: 20px 0;
+    text-align: center;  /* Ensure the heading is centered */
+}
+
+/* Subheading Styling */
+p {
+    font-size: 1.5em;
+    color: rgb(34, 32, 32);
+    margin-bottom: 30px;
+    text-align: center;  /* Ensure the subheading is centered */
+}
+
+/* Form Container */
+.form-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent black background */
+    
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Elements Styling */
+input, select, button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#ingredients {
+    font-size: 1.1em;
+    height: 50px; /* Bigger input box for ingredients */
+}
+
+button {
+    background-color: #fe0404c9;
+    font-family: Noto Serif;
+    font-size: 1.1em;
+    color: white;
+    cursor: pointer;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8a0202;
+}
+
+/* Recipe Results Section */
+.recipe-results {
+    margin-top: 40px;
+}
+
+.recipe-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Recipe Card Styling */
+.recipe-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Recipe Image Styling */
+.recipe-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Instructions Styling */
+.recipe-card p {
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+/* Ingredients List Styling */
+.recipe-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recipe-card ul li {
+    font-size: 1em;
+    padding: 5px 0;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Noto Serif', serif;
+    font-weight: normal;
+}
+
+footer p {
+    color: white;
+    font-size: 1em;
+}

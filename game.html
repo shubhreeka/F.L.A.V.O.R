@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+  <title>Catch the Food!</title>
+     <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="voice.html">Voice Recipe Assistant</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="eat.html">What To Eat?</a></li>
+                <li><a href="recipe.html">Popular Recipes</a></li>
+                <li><a href="quiz.html">Are You a Foodie?</a></li>
+                <li><a href="game.html">Game</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+  <style>
+
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: 'Noto Serif', serif;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: red;
+}
+
+/* Hero Section (Image Slideshow) */
+.hero {
+    position: relative;
+    flex: 1; /* This ensures the hero section takes up the remaining space */
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mySlides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slide 60s infinite;
+}
+
+/* Hero Text */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2; /* Makes sure text appears above the images */
+    padding: 0 15px;
+}
+
+.hero-text h2 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.hero-text h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Start Cooking Button */
+.start-cooking-btn {
+    font-family: 'Noto Serif', serif;
+    font-size: 1.5em;
+    padding: 15px 30px;
+    background-color: red; /* Red Button */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.start-cooking-btn:hover {
+    background-color: darkred; /* Darker Red on hover */
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Noto Serif', serif;
+    font-weight: normal;
+}
+
+footer p {
+    color: white;
+    font-size: 1em;
+}
+body {
+  text-align: center;
+  background: #f7f7f7;
+  
+}
+
+#gameArea {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  background-color: #eef;
+  border: 2px solid #000;
+  overflow: hidden;
+}
+
+#player {
+  position: absolute;
+  bottom: 10px;
+  left: 275px;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+#food {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5dc;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+    #gameArea {
+      position: relative;
+      width: 600px;
+      height: 500px;
+      margin: 20px auto;
+      background-color: #c2f0c2;
+      border: 3px solid #444;
+      overflow: hidden;
+    }
+
+    #player {
+      position: absolute;
+      bottom: 10px;
+      left: 275px;
+      width: 100px;
+      height: 60px;
+      
+      border-radius: 10px;
+      background-image: url('basket.png'); /* basket image */
+      background-size: cover;
+    }
+
+    .food {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-size: cover;
+    }
+
+    #scoreboard {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    #startBtn, #restartBtn {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    #gameOver {
+      display: none;
+      font-size: 24px;
+      color: red;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body background="1.jpg">
+<br><br>
+  <h1>🍕 Catch the Food! 🍎</h1>
+  <div id="scoreboard">
+    Score: <span id="score">0</span> | Lives: <span id="lives">3</span>
+  </div>
+  <button id="startBtn">Start Game</button>
+  <div id="gameArea">
+    <div id="player"></div>
+  </div>
+  <div id="gameOver">Game Over! <br><button id="restartBtn">Play Again</button></div>
+
+  <script>
+    const gameArea = document.getElementById("gameArea");
+    const player = document.getElementById("player");
+    const scoreDisplay = document.getElementById("score");
+    const livesDisplay = document.getElementById("lives");
+    const startBtn = document.getElementById("startBtn");
+    const restartBtn = document.getElementById("restartBtn");
+    const gameOverScreen = document.getElementById("gameOver");
+
+    const foodImages = [
+      'apple.png', // apple
+      'burger.png', // burger
+      'pizza.png', // pizza
+    ];
+
+    let playerX = 275;
+    let foodItems = [];
+    let score = 0;
+    let lives = 3;
+    let gameRunning = false;
+    let gameLoopId;
+
+    function movePlayer(e) {
+      if (!gameRunning) return;
+      if (e.key === "ArrowLeft" && playerX > 0) playerX -= 20;
+      if (e.key === "ArrowRight" && playerX < 540) playerX += 20;
+      player.style.left = playerX + "px";
+    }
+
+    function spawnFood() {
+      const food = document.createElement("div");
+      food.classList.add("food");
+      const imgIndex = Math.floor(Math.random() * foodImages.length);
+      food.style.backgroundImage = `url(${foodImages[imgIndex]})`;
+      food.style.left = Math.random() * 560 + "px";
+      food.style.top = "0px";
+      gameArea.appendChild(food);
+      foodItems.push({ el: food, y: 0 });
+    }
+
+    function updateGame() {
+      foodItems.forEach((item, index) => {
+        item.y += 4;
+        item.el.style.top = item.y + "px";
+        const foodX = parseInt(item.el.style.left);
+        if (item.y > 440) {
+          // missed food
+          gameArea.removeChild(item.el);
+          foodItems.splice(index, 1);
+          lives--;
+          updateStatus();
+          if (lives <= 0) endGame();
+        } else if (
+          item.y > 410 &&
+          foodX + 40 > playerX &&
+          foodX < playerX + 60
+        ) {
+          // caught food
+          gameArea.removeChild(item.el);
+          foodItems.splice(index, 1);
+          score += 10;
+          updateStatus();
+        }
+      });
+
+      if (gameRunning) {
+        gameLoopId = requestAnimationFrame(updateGame);
+      }
+    }
+
+    function updateStatus() {
+      scoreDisplay.textContent = score;
+      livesDisplay.textContent = lives;
+    }
+
+    function startGame() {
+      score = 0;
+      lives = 3;
+      updateStatus();
+      playerX = 275;
+      player.style.left = playerX + "px";
+      foodItems.forEach(item => item.el.remove());
+      foodItems = [];
+      gameOverScreen.style.display = "none";
+      gameRunning = true;
+      spawnInterval = setInterval(spawnFood, 1000);
+      gameLoopId = requestAnimationFrame(updateGame);
+    }
+
+    function endGame() {
+      gameRunning = false;
+      clearInterval(spawnInterval);
+      cancelAnimationFrame(gameLoopId);
+      gameOverScreen.style.display = "block";
+    }
+
+    startBtn.addEventListener("click", () => {
+      startBtn.style.display = "none";
+      startGame();
+    });
+
+    restartBtn.addEventListener("click", () => {
+      startGame();
+    });
+
+    document.addEventListener("keydown", movePlayer);
+  </script><br><br>
+      <footer>
+        <p>&copy; 2025 FLAVOR All rights reserved</p>
+    </footer>
+</body>
+</html>

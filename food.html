@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mood-Based Recipe Quiz</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Arial', sans-serif;
+      color: white;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 1s ease-in-out;
+      
+      margin: 0;
+      padding: 30px;
+      min-height: 100vh;
+      backdrop-filter: brightness(1);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 10;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.3em;
+      font-family: 'Noto Serif', serif;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: red;
+    }
+
+    h1 {
+      text-align: center;
+      color: #f3f2f0;
+      text-shadow: 1px 1px 3px #000;
+      margin-top: 80px;
+    }
+
+    form {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin: 6px 0;
+    }
+
+    button {
+      background: #f50404;
+      color: #f3f6f7;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #e17055;
+      color: #fff;
+    }
+
+    .result {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #2d3436;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 30px auto;
+    }
+
+    .recipe-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #d63031;
+    }
+
+    footer {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 10px 0;
+      font-family: 'Noto Serif', serif;
+    }
+
+    footer p {
+      color: white;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="voice.html">Voice Recipe Assistant</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="eat.html">What To Eat?</a></li>
+        <li><a href="recipe.html">Popular Recipes</a></li>
+        <li><a href="quiz.html">Are You a Foodie?</a></li>
+        <li><a href="game.html">Game</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <h1>Let's analyse your mood & get yummy food!</h1>
+
+  <form id="quizForm">
+    <div class="question">
+      <p>1. How did you sleep last night?</p>
+      <label><input type="radio" name="q1" value="happy"> Like a baby 😴</label>
+      <label><input type="radio" name="q1" value="anxious"> Couldn't sleep 😟</label>
+      <label><input type="radio" name="q1" value="sad"> Barely slept 😔</label>
+    </div>
+
+    <div class="question">
+      <p>2. What describes your energy right now?</p>
+      <label><input type="radio" name="q2" value="excited"> Super pumped! ⚡</label>
+      <label><input type="radio" name="q2" value="sad"> Tired and low 😞</label>
+      <label><input type="radio" name="q2" value="happy"> Relaxed and fine 🙂</label>
+    </div>
+
+    <div class="question">
+      <p>3. What's your go-to music today?</p>
+      <label><input type="radio" name="q3" value="sad"> Sad songs 😢</label>
+      <label><input type="radio" name="q3" value="happy"> Chill lo-fi ☁️</label>
+      <label><input type="radio" name="q3" value="excited"> Party beats 🔥</label>
+    </div>
+
+    <div class="question">
+      <p>4. How do you feel about people today?</p>
+      <label><input type="radio" name="q4" value="angry"> Annoyed 😠</label>
+      <label><input type="radio" name="q4" value="happy"> Happy to chat 😊</label>
+      <label><input type="radio" name="q4" value="anxious"> Want to be alone 😶</label>
+    </div>
+
+    <div class="question">
+      <p>5. Which emoji matches your vibe?</p>
+      <label><input type="radio" name="q5" value="happy"> 😃</label>
+      <label><input type="radio" name="q5" value="sad"> 😔</label>
+      <label><input type="radio" name="q5" value="angry"> 😡</label>
+    </div>
+    
+<div class="question">
+    <p>6. What's your ideal weekend plan?</p>
+    <label><input type="radio" name="q6" value="excited"> Adventure trip 🏞️</label>
+    <label><input type="radio" name="q6" value="happy"> Movie & snacks 🎬</label>
+    <label><input type="radio" name="q6" value="sad"> Stay in bed 😪</label>
+  </div>
+
+  <div class="question">
+    <p>7. Choose a color that appeals to you right now:</p>
+    <label><input type="radio" name="q7" value="angry"> Red 🔴</label>
+    <label><input type="radio" name="q7" value="anxious"> Grey ⚫</label>
+    <label><input type="radio" name="q7" value="happy"> Yellow 🟡</label>
+  </div>
+
+  <div class="question">
+    <p>8. What kind of weather do you prefer today?</p>
+    <label><input type="radio" name="q8" value="happy"> Sunny ☀️</label>
+    <label><input type="radio" name="q8" value="sad"> Rainy 🌧️</label>
+    <label><input type="radio" name="q8" value="anxious"> Cold & cloudy 🌫️</label>
+  </div>
+
+    <button type="button" onclick="analyzeMood()">Submit</button>
+  </form>
+
+  <div class="result" id="result" style="display: none;"></div>
+
+  <footer>
+    <p>&copy;2025 FLAVOR All rights reserved</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const recipeData = {
+  happy: [
+    {
+      name: "Paneer Tikka",
+      ingredients: "Paneer, curd, spices, capsicum",
+      instructions: "Marinate paneer, skewer with veggies, and grill until golden brown."
+    },
+    {
+      name: "Fruit Chaat",
+      ingredients: "Apple, banana, papaya, chaat masala, lemon",
+      instructions: "Chop fruits, sprinkle spices, squeeze lemon, and mix well."
+    }
+  ],
+  sad: [
+    {
+      name: "Rajma Chawal",
+      ingredients: "Rajma, rice, onions, tomatoes, masala",
+      instructions: "Pressure cook rajma, prepare masala base, mix and simmer. Serve with steamed rice."
+    },
+    {
+      name: "Maggi Masala Noodles",
+      ingredients: "Maggi, water, masala, veggies (optional)",
+      instructions: "Boil noodles with masala and add chopped veggies if desired."
+    }
+  ],
+  angry: [
+    {
+      name: "Masala Dosa",
+      ingredients: "Dosa batter, potatoes, mustard seeds, curry leaves",
+      instructions: "Make potato filling, spread inside dosa, roast till crispy and serve hot."
+    },
+    {
+      name: "Spicy Aloo Tikki",
+      ingredients: "Boiled potatoes, spices, breadcrumbs",
+      instructions: "Mash potatoes, mix spices, shape and shallow fry until crispy."
+    }
+  ],
+  anxious: [
+    {
+      name: "Banana Smoothie",
+      ingredients: "Banana, milk, honey, ice cubes",
+      instructions: "Blend all ingredients until creamy. Best served chilled."
+    },
+    {
+      name: "Oats Porridge",
+      ingredients: "Oats, milk, honey, fruits",
+      instructions: "Cook oats in milk, sweeten with honey, and top with fruits."
+    }
+  ],
+  excited: [
+    {
+      name: "Pani Puri",
+      ingredients: "Semolina puris, potato masala, spicy & sweet chutneys",
+      instructions: "Fill puris with masala, dip in pani and eat immediately!"
+    },
+    {
+      name: "Veggie Pizza",
+      ingredients: "Pizza base, cheese, capsicum, olives, sauce",
+      instructions: "Assemble toppings on base, bake until cheese melts."
+    }
+  ]
+};
+
+ 
+      function analyzeMood() {
+        const answers = Array.from(document.querySelectorAll('input[type="radio"]:checked'));
+        if (answers.length < 5) {
+          alert("Please answer all questions!");
+          return;
+        }
+
+        const moodCount = { happy: 0, sad: 0, angry: 0, anxious: 0, excited: 0 };
+        answers.forEach(answer => moodCount[answer.value]++);
+        const dominantMood = Object.keys(moodCount).reduce((a, b) => moodCount[a] > moodCount[b] ? a : b);
+        const recipe = recipeData[dominantMood][0];
+
+        const resultDiv = document.getElementById("result");
+        resultDiv.style.display = "block";
+        resultDiv.innerHTML = `
+          <p>Your mood seems to be: <strong>${dominantMood.toUpperCase()}</strong></p>
+          <p class="recipe-title">${recipe.name}</p>
+          <p><strong>Ingredients:</strong> ${recipe.ingredients}</p>
+          <p><strong>Instructions:</strong> ${recipe.instructions}</p>
+        `;
+      }
+
+      window.analyzeMood = analyzeMood;
+
+      // Background rotation
+      const images = ["50.jpg", "60.jpg", "70.jpg", "80.jpg", "90.jpg"];
+      let current = 0;
+
+      function changeBackground() {
+        const img = new Image();
+        img.src = images[current];
+        img.onload = () => {
+          document.body.style.backgroundImage = `url('${img.src}')`;
+          current = (current + 1) % images.length;
+        };
+      }
+
+      changeBackground();
+      setInterval(changeBackground, 4000); // 4s for better comfort
+    });
+  </script>
+
+</body>
+</html>

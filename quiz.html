@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Food Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="quiz.css">
+    <script src="quiz.js" defer></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="voice.html">Voice Recipe Assistant</a></li>
+                <li><a href="about.html">About Us</a></li>
+                 <li><a href="eat.html">What To Eat?</a></li>
+                <li><a href="recipe.html">Popular Recipes</a></li>
+                <li><a href="quiz.html">Are You a Foodie?</a></li>
+                <li><a href="game.html">Game</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Quiz Section -->
+    <section class="quiz-container">
+        <div class="quiz-header">
+            <h2>Indian Food Quiz</h2>
+            <p>Test your knowledge about Indian food!</p>
+        </div>
+
+        
+    <form id="quiz-form" onsubmit="event.preventDefault(); calculateScore();">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. What is the main ingredient of a traditional Indian "Samosa"?</p>
+            <label><input type="radio" name="q1" value="A"> A) Potatoes</label>
+            <label><input type="radio" name="q1" value="B"> B) Rice</label>
+            <label><input type="radio" name="q1" value="C"> C) Lentils</label>
+            <label><input type="radio" name="q1" value="D"> D) Paneer</label>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. Which Indian dish is made with a mixture of chickpeas, potatoes, and spices, served with chutney?</p>
+            <label><input type="radio" name="q2" value="A"> A) Pav Bhaji</label>
+            <label><input type="radio" name="q2" value="B"> B) Chole Bhature</label>
+            <label><input type="radio" name="q2" value="C"> C) Pani Puri</label>
+            <label><input type="radio" name="q2" value="D"> D) Aloo Tikki</label>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>3. What is the name of the famous spicy Indian rice dish made with vegetables and served with raita?</p>
+            <label><input type="radio" name="q3" value="A"> A) Biryani</label>
+            <label><input type="radio" name="q3" value="B"> B) Pulao</label>
+            <label><input type="radio" name="q3" value="C"> C) Khichdi</label>
+            <label><input type="radio" name="q3" value="D"> D) Dosa</label>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>4. Which of the following is a famous dessert from Rajasthan?</p>
+            <label><input type="radio" name="q4" value="A"> A) Gajar ka Halwa</label>
+            <label><input type="radio" name="q4" value="B"> B) Rasgulla</label>
+            <label><input type="radio" name="q4" value="C"> C) Ghewar</label>
+            <label><input type="radio" name="q4" value="D"> D) Jalebi</label>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>5. What is the key ingredient in the Indian dish "Aloo Gobi"?</p>
+            <label><input type="radio" name="q5" value="A"> A) Carrot</label>
+            <label><input type="radio" name="q5" value="B"> B) Potato and Cauliflower</label>
+            <label><input type="radio" name="q5" value="C"> C) Onion</label>
+            <label><input type="radio" name="q5" value="D"> D) Tomato</label>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>6. Which Indian state is known for its famous fish curry called "Machher Jhol"?</p>
+            <label><input type="radio" name="q6" value="A"> A) Kerala</label>
+            <label><input type="radio" name="q6" value="B"> B) Goa</label>
+            <label><input type="radio" name="q6" value="C"> C) West Bengal</label>
+            <label><input type="radio" name="q6" value="D"> D) Tamil Nadu</label>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>7. What is the name of the flatbread that is cooked in a tandoor and is often served with kebabs?</p>
+            <label><input type="radio" name="q7" value="A"> A) Naan</label>
+            <label><input type="radio" name="q7" value="B"> B) Paratha</label>
+            <label><input type="radio" name="q7" value="C"> C) Roti</label>
+            <label><input type="radio" name="q7" value="D"> D) Dosa</label>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>8. Which of the following is a traditional Indian drink made with yogurt, spices, and sometimes fruit?</p>
+            <label><input type="radio" name="q8" value="A"> A) Lassi</label>
+            <label><input type="radio" name="q8" value="B"> B) Chaas</label>
+            <label><input type="radio" name="q8" value="C"> C) Coconut Water</label>
+            <label><input type="radio" name="q8" value="D"> D) Masala Chai</label>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>9. Which of these is the main ingredient of "Methi Thepla"?</p>
+            <label><input type="radio" name="q9" value="A"> A) Fenugreek Leaves</label>
+            <label><input type="radio" name="q9" value="B"> B) Spinach</label>
+            <label><input type="radio" name="q9" value="C"> C) Mustard Leaves</label>
+            <label><input type="radio" name="q9" value="D"> D) Coriander</label>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>10. What is "Dhokla" made from?</p>
+            <label><input type="radio" name="q10" value="A"> A) Rice</label>
+            <label><input type="radio" name="q10" value="B"> B) Lentils</label>
+            <label><input type="radio" name="q10" value="C"> C) Chickpea flour (Besan)</label>
+            <label><input type="radio" name="q10" value="D"> D) Maize flour</label>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="question">
+            <p>11. Which is the popular sweet dish made of condensed milk, sugar, and ghee, often served during festivals?</p>
+            <label><input type="radio" name="q11" value="A"> A) Kheer</label>
+            <label><input type="radio" name="q11" value="B"> B) Gulab Jamun</label>
+            <label><input type="radio" name="q11" value="C"> C) Burfi</label>
+            <label><input type="radio" name="q11" value="D"> D) Halwa</label>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="question">
+            <p>12. Which of the following is a traditional South Indian dish made from fermented rice and urad dal batter?</p>
+            <label><input type="radio" name="q12" value="A"> A) Chole Bhature</label>
+            <label><input type="radio" name="q12" value="B"> B) Dosa</label>
+            <label><input type="radio" name="q12" value="C"> C) Aloo Gobi</label>
+            <label><input type="radio" name="q12" value="D"> D) Tandoori Chicken</label>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="question">
+            <p>13. What is the primary ingredient of the dish "Rogan Josh"?</p>
+            <label><input type="radio" name="q13" value="A"> A) Lamb</label>
+            <label><input type="radio" name="q13" value="B"> B) Chicken</label>
+            <label><input type="radio" name="q13" value="C"> C) Fish</label>
+            <label><input type="radio" name="q13" value="D"> D) Paneer</label>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="question">
+            <p>14. Which of these dishes is typically served with "Dal Tadka" in India?</p>
+            <label><input type="radio" name="q14" value="A"> A) Chapati</label>
+            <label><input type="radio" name="q14" value="B"> B) Naan</label>
+            <label><input type="radio" name="q14" value="C"> C) Rice</label>
+            <label><input type="radio" name="q14" value="D"> D) Paratha</label>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="question">
+            <p>15. Which spice is commonly used in Indian cooking and gives the dish a yellow color?</p>
+            <label><input type="radio" name="q15" value="A"> A) Cumin</label>
+            <label><input type="radio" name="q15" value="B"> B) Cardamom</label>
+            <label><input type="radio" name="q15" value="C"> C) Turmeric</label>
+            <label><input type="radio" name="q15" value="D"> D) Cinnamon</label>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="question">
+            <p>16. What is the name of the popular snack from Mumbai, consisting of puffed rice, sev, and chutney?</p>
+            <label><input type="radio" name="q16" value="A"> A) Chaat</label>
+            <label><input type="radio" name="q16" value="B"> B) Bhel Puri</label>
+            <label><input type="radio" name="q16" value="C"> C) Samosa</label>
+            <label><input type="radio" name="q16" value="D"> D) Pani Puri</label>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="question">
+            <p>17. Which region of India is most famous for its spicy "Chettinad" cuisine?</p>
+            <label><input type="radio" name="q17" value="A"> A) Kerala</label>
+            <label><input type="radio" name="q17" value="B"> B) Andhra Pradesh</label>
+            <label><input type="radio" name="q17" value="C"> C) Tamil Nadu</label>
+            <label><input type="radio" name="q17" value="D"> D) Punjab</label>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="question">
+            <p>18. What is the main ingredient of "Paneer Butter Masala"?</p>
+            <label><input type="radio" name="q18" value="A"> A) Chicken</label>
+            <label><input type="radio" name="q18" value="B"> B) Lamb</label>
+            <label><input type="radio" name="q18" value="C"> C) Paneer (Cottage Cheese)</label>
+            <label><input type="radio" name="q18" value="D"> D) Potato</label>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="question">
+            <p>19. Which of the following is a traditional Indian dish made from lentils and rice, often served with vegetables or chutney?</p>
+            <label><input type="radio" name="q19" value="A"> A) Masoor Dal</label>
+            <label><input type="radio" name="q19" value="B"> B) Khichdi</label>
+            <label><input type="radio" name="q19" value="C"> C) Korma</label>
+            <label><input type="radio" name="q19" value="D"> D) Pulao</label>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="question">
+            <p>20. Which of the following is a popular street food of Delhi made with fried bread, chickpeas, and spicy potatoes?</p>
+            <label><input type="radio" name="q20" value="A"> A) Samosa</label>
+            <label><input type="radio" name="q20" value="B"> B) Aloo Tikki</label>
+            <label><input type="radio" name="q20" value="C"> C) Chole Bhature</label>
+            <label><input type="radio" name="q20" value="D"> D) Chaat</label>
+        </div>
+
+        <div class="submit-btn-container">
+            <button type="submit" class="submit-btn">Submit</button>
+        </div>
+    </form>
+</div>
+ <!-- Result Section -->
+ <div id="quiz-result" style="display: none;">
+    <p>Your score: <span id="score"></span> / 20</p>
+    <p id="remarks"></p>
+</div>
+</section>
+
+
+            <!-- Footer (Same as other pages) -->
+            <footer>
+                <p>&copy; 2025 FLAVOR All rights reserved</p>
+            </footer>
+        </body>
+        
+        </html>
